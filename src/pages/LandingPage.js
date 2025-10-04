@@ -136,7 +136,95 @@ const LandingPage = () => {
     <div className="min-h-screen bg-white">
       {/* Banner with Header */}
       <section className="relative">
-        <div className="relative h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(/img/banner.png)'}}>
+        {/* Desktop Banner */}
+        <div className="relative h-screen bg-cover bg-center bg-no-repeat hidden md:block" style={{backgroundImage: 'url(/img/banner.png)'}}>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+          
+          {/* Header Menu */}
+          <header className="relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex justify-between items-center py-4">
+                <div className="flex items-center">
+                  <img 
+                    src="/img/logo.png" 
+                    alt="ScanCal Logo" 
+                    className="h-12 rounded-lg"
+                  />
+                </div>
+                
+                 <div className="flex items-center space-x-4">
+                   {/* Navigation Links */}
+                   <nav className="hidden md:flex items-center space-x-6">
+                     <a href="#funcionalidades" className="text-white hover:text-green-300 transition-colors duration-200">
+                       Funcionalidades
+                     </a>
+                     <a href="#como-funciona" className="text-white hover:text-green-300 transition-colors duration-200">
+                       Como Funciona
+                     </a>
+                     <a href="#avaliacoes" className="text-white hover:text-green-300 transition-colors duration-200">
+                       Avaliações
+                     </a>
+                     <a href="#precos" className="text-white hover:text-green-300 transition-colors duration-200">
+                       Preços
+                     </a>
+                   </nav>
+                   
+                   {isAuthenticated ? (
+                     <Link
+                       to="/dashboard"
+                       className="bg-white text-green-600 px-6 py-2 rounded-lg font-medium hover:bg-green-50 transition-colors duration-200"
+                     >
+                       Dashboard
+                     </Link>
+                   ) : (
+                     <div className="flex items-center space-x-3">
+                       <Link
+                         to="/login"
+                         className="text-white hover:text-green-300 transition-colors duration-200"
+                       >
+                         Entrar
+                       </Link>
+                       <Link
+                         to="/register"
+                         className="bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200"
+                       >
+                         Cadastrar
+                       </Link>
+                     </div>
+                   )}
+                 </div>
+              </div>
+            </div>
+          </header>
+          
+          {/* Hero Content */}
+          <div className="relative z-10 flex items-center h-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="max-w-2xl">
+                <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                  Transforme sua 
+                  <span className="text-green-400"> alimentação</span>
+                </h1>
+                <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+                  Análise nutricional instantânea via WhatsApp. Descubra calorias, 
+                  macros e receba sugestões saudáveis em segundos.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/register"
+                    className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors duration-200 text-center"
+                  >
+                    Começar Agora
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile Banner */}
+        <div className="relative h-screen bg-cover bg-center bg-no-repeat md:hidden" style={{backgroundImage: 'url(/img/Banne-smarth.png)'}}>
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-30"></div>
           
