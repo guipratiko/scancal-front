@@ -623,10 +623,32 @@ const LandingPage = () => {
                  <li><Link to="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200">Privacidade</Link></li>
                </ul>
              </div>
-           </div>
+          </div>
 
-           {/* Bottom */}
-           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          {/* Clerky Integration */}
+          <div className="border-t border-gray-800 pt-8 pb-4">
+            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+              <span className="text-gray-400 text-sm">Powered by</span>
+              <a 
+                href="https://www.clerky.com.br" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200"
+              >
+                <img 
+                  src="/img/clerky.png" 
+                  alt="Clerky - Plataforma de Integração WhatsApp" 
+                  className="h-6"
+                />
+                <span className="text-gray-400 text-sm">
+                  ScanCal usa a plataforma Clerky como integração de WhatsApp
+                </span>
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
              <div className="text-center md:text-left">
                <p className="text-gray-400">
                  © 2025 ScanCal. Todos os direitos reservados.
